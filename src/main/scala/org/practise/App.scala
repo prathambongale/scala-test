@@ -22,20 +22,22 @@ object App {
       //.config("spark.mongodb.output.uri", "mongodb://127.0.0.1/scala_spark_db.test")
       .getOrCreate()
 
-    import spark.implicits._
-    import com.mongodb.spark.sql._
-    import com.mongodb.spark._
-    import com.mongodb.spark.config._
-    import org.bson.Document
     import com.mongodb.spark.MongoSpark
-    
+
     val sc = spark.sparkContext
 
     val rdd = MongoSpark.load(sc)
+    val df = MongoSpark.load(spark)
 
-    //rdd.printSchema() // Prints DataFrame schema
+    df.printSchema() // Prints DataFrame schema
     println("mongo record count : " + rdd.count)
-    //println(rdd.first.toJson)
+    println("mongo list : " + rdd.collect().foreach(Document=>Unit))
+    println("mongo first record : " + rdd.first().toJson())
+
+    println("Mongo records : " + df.show())
+
+    println("Collection Record : ")
+    rdd.foreach(x => println(x))
   
   }
 
