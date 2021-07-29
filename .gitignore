@@ -1,2 +1,40 @@
 *.class
 *.log
+.gradle
+/build/
+!gradle/wrapper/gradle-wrapper.jar
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+/out/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+#Maven
+log/
+target/
+/settings.xml
+!/settings.xml
+/reactive-services/reactive-services.iml
+reactive-practice.iml
+.DS_Store
+
+### VS Code ###
+.vscode/
