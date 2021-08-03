@@ -38,3 +38,4 @@ reactive-practice.iml
 
 ### VS Code ###
 .vscode/
+.parquet
